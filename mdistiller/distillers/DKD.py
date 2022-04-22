@@ -4,7 +4,7 @@ import torch.nn.functional as F
 
 from ._base import Distiller
 
-
+#这里的target就是最原始的标签，e.g.cifar10的话就是0-9
 def dkd_loss(logits_student, logits_teacher, target, alpha, beta, temperature):
     gt_mask = _get_gt_mask(logits_student, target)
     other_mask = _get_other_mask(logits_student, target)
